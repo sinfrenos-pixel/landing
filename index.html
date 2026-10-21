@@ -174,12 +174,8 @@ footer{padding:2rem 0;font-size:.9rem;color:var(--muted)}
   <div class="wrap">
     <h2>Dejá de ser una espectadora de tu propio <span class="script">potencial.</span></h2>
     <p class="muted">Podés seguir acumulando información en tu cuaderno y prometiéndote que “más adelante” será el momento perfecto. O podés regalarte 3 horas para entender qué te frena y poner en marcha lo que llevás 2 años postergando.</p>
-    <form id="f" novalidate aria-label="Reserva de lugar en el taller">
-      <div class="field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" autocomplete="name" required aria-required="true" aria-describedby="err-nombre"><p class="err" id="err-nombre"></p></div>
-      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" inputmode="email" autocomplete="email" required aria-required="true" aria-describedby="err-email"><p class="err" id="err-email"></p></div>
-      <button class="btn" type="submit">Reservar mi entrada al evento presencial · $10.000 ARS</button>
-    </form>
-    <div class="ok" id="ok" role="status" tabindex="-1">¡Listo! Quedaste anotada en la lista prioritaria. Te escribiremos apenas confirmemos fecha y salón.</div>
+    <!-- Reemplazá href="#reservar" por el link de pago o de inscripción -->
+    <a class="btn" href="#reservar" style="margin-top:2rem">Reservar mi entrada al evento presencial · $10.000 ARS</a>
   </div>
 </section>
 
@@ -200,28 +196,6 @@ var VIDEO_SRC=""; // URL del video: embed de YouTube/Vimeo o archivo .mp4
     }
     box.replaceChildren(el);el.focus();
   });
-})();
-(function(){
-  var f=document.getElementById('f'),ok=document.getElementById('ok');
-  var fields=[
-    {el:document.getElementById('nombre'),err:document.getElementById('err-nombre'),msg:'Escribí tu nombre.'},
-    {el:document.getElementById('email'),err:document.getElementById('err-email'),msg:'Escribí un email válido, por ejemplo nombre@correo.com.'}
-  ];
-  function check(x){
-    var v=x.el.value.trim();
-    var good=v!==''&&(x.el.type!=='email'||x.el.checkValidity());
-    x.err.textContent=good?'':x.msg;
-    x.el.setAttribute('aria-invalid',good?'false':'true');
-    return good;
-  }
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    var first=null;
-    fields.forEach(function(x){if(!check(x)&&!first)first=x.el});
-    if(first){first.focus();return}
-    f.style.display='none';ok.style.display='block';ok.focus();
-  });
-  fields.forEach(function(x){x.el.addEventListener('input',function(){if(x.el.getAttribute('aria-invalid')==='true')check(x)})});
 })();
 </script>
 </body>
