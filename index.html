@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Taller presencial de autoobservación y autoliderazgo</title>
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Ballet&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#f3f3f3;--surface:#fff;--ink:#161616;--muted:#555;--line:#d9d9d9;--band:#161616;--band-ink:#f3f3f3;
+  --accent:#ea580c;--accent-ink:#c2410c;--on-accent:#111;
+  --head:"Anton",Impact,"Arial Narrow",sans-serif;--script:"Ballet","Brush Script MT",cursive;--body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121212;--surface:#1c1c1c;--ink:#f2f2f2;--muted:#a8a8a8;--line:#333;--band:#0a0a0a;--band-ink:#f2f2f2;
+  --accent:#fb923c;--accent-ink:#fb923c;--on-accent:#111}}
+:root[data-theme="dark"]{
+  --bg:#121212;--surface:#1c1c1c;--ink:#f2f2f2;--muted:#a8a8a8;--line:#333;--band:#0a0a0a;--band-ink:#f2f2f2;
+  --accent:#fb923c;--accent-ink:#fb923c;--on-accent:#111}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0}
+h1,h2,h3{font-family:var(--head);font-weight:400;line-height:1.05;margin:0 0 1rem;letter-spacing:.01em;text-transform:uppercase}
+.script{font-family:var(--script);font-weight:400;text-transform:none;letter-spacing:0;font-size:1.3em;line-height:1;color:var(--accent-ink);padding-right:.1em;text-shadow:0 0 6px color-mix(in srgb,currentColor 70%,transparent),0 0 16px color-mix(in srgb,currentColor 40%,transparent)}
+h1{font-size:clamp(1.9rem,5.6vw,3.7rem);max-width:26ch}
+h2{font-size:clamp(2.1rem,6.5vw,3.5rem);max-width:22ch}
+h3{font-size:1.4rem;letter-spacing:.02em;line-height:1.2}
+p{margin:0 0 1rem;max-width:62ch}
+.eyebrow{font:600 .8rem/1.3 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:1.25rem;display:flex;gap:.6rem;align-items:center}
+.eyebrow::before{content:"";width:2rem;height:3px;background:var(--accent);flex:none}
+.muted{color:var(--muted)}
+mark{background:none;color:var(--accent-ink);box-shadow:inset 0 -.18em 0 color-mix(in srgb,var(--accent) 35%,transparent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:52px;padding:.9rem 1.6rem;background:var(--accent);color:var(--on-accent);font:600 1rem/1.2 var(--body);border:2px solid var(--accent);border-radius:999px;text-decoration:none;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 0 -2px color-mix(in srgb,var(--accent) 40%,transparent)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.btn svg{width:20px;height:20px}
+/* hero */
+.hero{padding:3.5rem 0 4.5rem;border-bottom:1px solid var(--line)}
+.hero .sub{font-size:1.2rem;max-width:56ch;color:var(--muted)}
+.hero .sub strong{color:var(--ink)}
+.badges{display:grid;gap:.75rem;margin:2rem 0;max-width:34rem}
+.badge{display:flex;gap:.9rem;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);padding:.9rem 1.1rem;border-radius:10px;font-size:.98rem;line-height:1.5}
+.badge svg{width:22px;height:22px;flex:none;margin-top:2px;color:var(--accent-ink)}
+.badge b{display:block}
+/* band sections */
+.band{background:var(--band);color:var(--band-ink)}
+.band .eyebrow,.band .script{color:var(--accent)}
+.band .muted{color:#b5b5b5}
+.big{font-family:var(--head);font-weight:400;font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;max-width:30ch;letter-spacing:.02em}
+.quote{border-left:4px solid var(--accent);padding-left:1.25rem;margin:2rem 0}
+.grid{display:grid;gap:1rem;margin-top:2rem}
+@media(min-width:760px){.grid.c3{grid-template-columns:repeat(3,1fr)}.grid.c2{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.5rem}
+.card p{margin:0;color:var(--muted);font-size:1rem}
+.band .card{background:#1f1f1f;border-color:#333}
+.band .card p{color:#b5b5b5}
+.num{counter-increment:n;font:400 1.1rem var(--head);color:var(--on-accent);background:var(--accent);width:2rem;height:2rem;border-radius:50%;display:grid;place-items:center;margin-bottom:1rem}
+.num::before{content:counter(n)}
+.cards{counter-reset:n}
+.threat{margin-top:2rem;padding:1.5rem;border:2px solid var(--accent);border-radius:14px;font-family:var(--head);font-size:1.45rem;line-height:1.3;font-weight:400;letter-spacing:.02em}
+/* contract */
+.contract{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.75rem;margin-top:2rem}
+.contract h3{display:flex;gap:.6rem;align-items:center}
+.contract h3 svg{width:24px;height:24px;color:var(--accent-ink)}
+.price{font:400 clamp(3rem,9vw,4.4rem)/1 var(--head);letter-spacing:.01em}
+.price small{font:500 1rem var(--body);color:var(--muted);letter-spacing:0;margin-left:.4rem}
+/* faq */
+details{border-top:1px solid var(--line)}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:1.25rem 0;font:400 1.3rem/1.3 var(--head);letter-spacing:.02em;display:flex;justify-content:space-between;gap:1rem;align-items:center;min-height:44px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.6rem;color:var(--accent-ink);transition:transform .2s ease;flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);padding-bottom:1.25rem}
+/* final */
+.final{text-align:left}
+.final h2{color:var(--band-ink);max-width:16ch}
+form{display:grid;gap:1rem;max-width:30rem;margin-top:2rem}
+label{display:grid;gap:.35rem;font-weight:500;font-size:.95rem}
+input{font:inherit;min-height:48px;padding:.7rem .9rem;border-radius:10px;border:1px solid #555;background:#1f1f1f;color:#f2f2f2}
+input::placeholder{color:#8a8a8a}
+.ok{display:none;padding:1rem 1.2rem;border:2px solid var(--accent);border-radius:12px;max-width:30rem;margin-top:1rem}
+.note{font-size:.88rem;color:#b5b5b5;margin-top:1rem}
+footer{padding:2rem 0;font-size:.9rem;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Taller presencial exclusivo · 3 horas</div>
+    <h1>Por qué seguir sumando cursos y libros es la razón exacta por la que tu proyecto lleva 2 años <span class="script">paralizado.</span></h1>
+    <p class="sub">Dejá de actuar como una “coleccionista de conocimiento”. Asistí a una experiencia presencial de <strong>180 minutos</strong> para entender la historia que te contás, deconstruir tus miedos y pasar de la intención a la ejecución real.</p>
+    <div class="badges">
+      <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 1 0-6V6H3z"/></svg><div><b>Entrada preferencial: $10.000 ARS</b>Valor simbólico para la reserva del lugar.</div></div>
+      <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>Fecha y lugar: próximamente</b>Se notificará primero a la lista de inscriptas para elegir horario antes de la apertura general.</div></div>
+    </div>
+    <a class="btn" href="#reservar">Quiero reservar mi lugar en la lista preferencial por $10.000
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">La frustración de saber</div>
+    <h2>Saber exactamente qué hacer no significa que vayas a <span class="script">hacerlo.</span></h2>
+    <p>Tenés la experiencia, el conocimiento profesional y un proyecto concreto en la cabeza que sabés que querés lanzar. Sin embargo, pasan los meses y seguís atrapada en el bucle de “darle vueltas”.</p>
+    <blockquote class="quote big">“Sé exactamente lo que quiero hacer, pero llevo más de dos años dándole vueltas y no avanzo.”</blockquote>
+    <p>No tenés un problema de falta de ideas ni de capacidad. Tenés una <mark>brecha dolorosa entre tu intención y tu acción</mark>, alimentada por la culpa de sentir que desperdiciás tu potencial en la zona de confort.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="eyebrow">El costo invisible de postergar</div>
+    <h2>El precio oculto de regalarle otro año a la <span class="script">duda.</span></h2>
+    <p class="muted">Postergar no es solo un problema de agenda. Cada mes que dejás tu proyecto en el tintero pagás tres costos invisibles:</p>
+    <div class="grid c3 cards">
+      <div class="card"><div class="num"></div><h3>Lo que dejás de vivir</h3><p>Las experiencias, decisiones, autonomía y crecimiento personal que nunca llegan a existir mientras te quedás en lo seguro.</p></div>
+      <div class="card"><div class="num"></div><h3>Las oportunidades perdidas</h3><p>Los ingresos potenciales, el posicionamiento profesional y la libertad que regalás al no mostrar lo que sabés hacer.</p></div>
+      <div class="card"><div class="num"></div><h3>La historia que te contás</h3><p>Cada vez que te prometés empezar el lunes y volvés a frenar, tu cerebro refuerza la creencia de que “no sos constante” o “no sos capaz”.</p></div>
+    </div>
+    <div class="threat">Si no hacés una pausa para entender qué te paraliza hoy, ¿dónde vas a estar dentro de 5 años? Seguir exactamente en el mismo lugar es el precio más caro que podés pagar.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Por qué lo anterior no funcionó</div>
+    <h2>Acumular más información nunca te va a <span class="script">desbloquear.</span></h2>
+    <p>Probablemente ya leíste libros de desarrollo personal, escuchaste decenas de podcasts, compraste agendas estructuradas y tomaste varios cursos online. Pero al terminar, volviste al mismo punto de parálisis. ¿Por qué?</p>
+    <div class="grid c3 cards">
+      <div class="card"><div class="num"></div><h3>No es un problema de conocimiento</h3><p>Ya sabés qué tendrías que estar haciendo. Sumar teoría es una forma elegante de postergar.</p></div>
+      <div class="card"><div class="num"></div><h3>La motivación pasiva dura 24 horas</h3><p>Las charlas eufóricas no cambian tus patrones ni desarman tus interpretaciones automáticas.</p></div>
+      <div class="card"><div class="num"></div><h3>Sola volvés al mismo bucle</h3><p>Llevás 2 años usando el mismo mapa mental. Para ver lo que hoy no ves necesitás una mirada externa y autoobservación directa.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="eyebrow">La solución: el encuentro presencial</div>
+    <h2>3 horas para cerrar la brecha entre intención y <span class="script">acción.</span></h2>
+    <p class="muted">Una experiencia presencial de 180 minutos diseñada no para darte una montaña de teoría, sino para que mires tu propia vida y reconozcas lo que te frena.</p>
+    <div class="grid c2 cards">
+      <div class="card"><div class="num"></div><h3>Distinguir hechos de interpretaciones</h3><p>Separar lo que realmente ocurre de los juicios e historias que te contás sobre por qué no podés.</p></div>
+      <div class="card"><div class="num"></div><h3>El circuito de tu parálisis</h3><p>Cómo tu lenguaje, tus emociones y tu cuerpo condicionan la forma en que decidís y ejecutás.</p></div>
+      <div class="card"><div class="num"></div><h3>Desarmar tus etiquetas fijas</h3><p>Dejar de repetirte “soy inconstante” o “soy mala para vender” y entender que tu identidad no es una sentencia previa.</p></div>
+      <div class="card"><div class="num"></div><h3>Tu primer paso concreto</h3><p>Salir con una decisión clara, un compromiso real y una pequeña acción para poner en marcha tu proyecto.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Reserva y transparencia</div>
+    <h2>Todo sobre tu lugar, sin letra chica.</h2>
+    <div class="grid c2">
+      <div class="card">
+        <div class="price">$10.000<small>ARS</small></div>
+        <p style="margin-top:1rem">Valor accesible fijado para asegurar el compromiso de asistencia y reservar tu silla en la sala.</p>
+        <p><b>Modalidad:</b> presencial, cupos reducidos por capacidad del espacio.<br><b>Ubicación:</b> ciudad y zona a confirmar.</p>
+        <p style="margin:0"><b>Lista prioritaria:</b> al reservar hoy, apenas confirmemos fecha y salón tendrás acceso exclusivo para elegir tu turno antes de la difusión masiva.</p>
+      </div>
+      <div class="card contract" style="margin-top:0">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 11l3 3 7-7M4 4h16v16H4z"/></svg>Nuestro contrato de transparencia comercial</h3>
+        <p>Queremos jugar con las cartas sobre la mesa: al final del evento te vamos a presentar una propuesta paga intensiva para quienes quieran seguir profundizando en el acompañamiento.</p>
+        <p style="margin:0">Pero no necesitás comprar nada para que estas 3 horas valgan el 100% de tu tiempo y tu dinero. Vos decidís con total libertad qué hacer después.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow">Preguntas frecuentes</div>
+    <h2 style="margin-bottom:2rem">Antes de reservar, quizás te preguntes…</h2>
+    <details><summary>¿Por qué hay que abonar $10.000 si todavía no está la fecha confirmada?</summary><p>Es un filtro de compromiso para asegurar que quienes reservan realmente asistan. Al inscribirte hoy, aseguráte tu lugar en la lista prioritaria y tendrás la primera opción de elegir turno. Si la fecha no te sirve, te devolvemos el 100% de tu dinero.</p></details>
+    <details><summary>Ya hice muchos cursos y leí libros, ¿en qué se diferencia?</summary><p>No es un curso ni una clase teórica. No venís a tomar notas de conceptos que ya sabés: es un taller de autoobservación guiado para que entiendas tu patrón de postergación y salgas con una decisión práctica.</p></details>
+    <details><summary>No tengo mucho tiempo libre, ¿me sirve?</summary><p>Dura únicamente 3 horas en una sola tarde. No necesitás más tiempo en tu agenda; necesitás dejar de gastar energía dando vueltas con las mismas decisiones no tomadas.</p></details>
+    <details><summary>¿Qué pasa si descubro que mi proyecto no es viable?</summary><p>El objetivo no es obligarte a lanzar a ciegas, sino darte claridad. Una decisión clara de ajustar o redefinir tu proyecto es mucho más sana que seguir 2 años paralizada por la duda.</p></details>
+  </div>
+</section>
+
+<section class="band final" id="reservar">
+  <div class="wrap">
+    <div class="eyebrow">Tu lugar te espera</div>
+    <h2>Dejá de ser una espectadora de tu propio <span class="script">potencial.</span></h2>
+    <p class="muted">Podés seguir acumulando información en tu cuaderno y prometiéndote que “más adelante” será el momento. O podés regalarte 3 horas para entender qué te frena y poner en marcha el proyecto que llevás 2 años postergando.</p>
+    <form id="f" novalidate>
+      <label>Nombre<input name="n" type="text" autocomplete="name" required></label>
+      <label>Email<input name="e" type="email" autocomplete="email" required></label>
+      <button class="btn" type="submit">Reservar mi entrada al evento presencial · $10.000 ARS</button>
+    </form>
+    <div class="ok" id="ok" role="status" tabindex="-1">¡Listo! Quedaste anotada en la lista prioritaria. Te escribiremos apenas confirmemos fecha y salón.</div>
+    <p class="note">Si la fecha no te sirve, te devolvemos el 100% de tu dinero.</p>
+  </div>
+</section>
+
+<footer><div class="wrap">© 2026 · Taller presencial de autoobservación y autoliderazgo</div></footer>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=e.target;
+  if(!f.n.value.trim()||!f.e.checkValidity()||!f.e.value){f.reportValidity();return}
+  f.style.display='none';
+  var ok=document.getElementById('ok');ok.style.display='block';ok.focus();
+});
+</script>
+</body>
+</html>
