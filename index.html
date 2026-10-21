@@ -5,30 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Taller presencial de autoobservación y autoliderazgo</title>
 <meta name="color-scheme" content="light">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Ballet&family=Inter:wght@400;500;600&display=swap">
+<meta name="description" content="Taller presencial de 3 horas de autoobservación y autoliderazgo para dejar de postergar tu proyecto. Entrada preferencial $10.000 ARS.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Inter:wght@400;500;600&display=swap">
 <style>
+@font-face{font-family:"Sloop Script";src:local("Sloop Script"),local("Sloop Script Pro"),local("SloopScriptPro-Regular"),url("fonts/SloopScript.woff2") format("woff2"),url("fonts/SloopScript.otf") format("opentype"),url("fonts/SloopScript.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
 :root{
   --bg:#f3f3f3;--surface:#fff;--ink:#161616;--muted:#555;--line:#d9d9d9;--band:#161616;--band-ink:#f3f3f3;
   --accent:#ea580c;--accent-ink:#c2410c;--on-accent:#111;
-  --head:"Anton",Impact,"Arial Narrow",sans-serif;--script:"Ballet","Brush Script MT",cursive;--body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --head:"Anton",Impact,"Arial Narrow",sans-serif;--script:"Sloop Script","Great Vibes","Brush Script MT",cursive;--body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
 }
 *,*::before,*::after{box-sizing:inherit}
 html{font-size:90%;scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
 .wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
-section{padding:4.5rem 0}
+section{padding:5.5rem 0}
+.skip{position:absolute;left:-999px;top:0;z-index:100;background:var(--accent);color:var(--on-accent);padding:.9rem 1.3rem;font-weight:600;text-decoration:none}
+.skip:focus{left:0}
+main:focus{outline:none}
 h1,h2,h3{font-family:var(--head);font-weight:400;line-height:1.05;margin:0 0 1rem;letter-spacing:.01em;text-transform:uppercase}
-.script{font-family:var(--script);font-weight:400;text-transform:none;letter-spacing:0;font-size:1.3em;line-height:1;color:var(--accent-ink);padding-right:.1em;text-shadow:0 0 6px color-mix(in srgb,currentColor 70%,transparent),0 0 16px color-mix(in srgb,currentColor 40%,transparent)}
+.script{font-family:var(--script);font-weight:400;text-transform:none;letter-spacing:0;font-size:1.4em;line-height:1;color:var(--accent-ink);padding-right:.1em;text-shadow:0 0 6px color-mix(in srgb,currentColor 70%,transparent),0 0 16px color-mix(in srgb,currentColor 40%,transparent)}
 h1{font-size:clamp(1.9rem,5vw,3.7rem);max-width:26ch}
 h2{font-size:clamp(2.1rem,5.9vw,3.5rem);max-width:22ch}
 h3{font-size:1.4rem;letter-spacing:.02em;line-height:1.2}
 p{margin:0 0 1rem;max-width:62ch}
-.eyebrow{font:600 .8rem/1.3 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:1.25rem;display:flex;gap:.6rem;align-items:center}
-.eyebrow::before{content:"";width:2rem;height:3px;background:var(--accent);flex:none}
+.eyebrow{font:600 .85rem/1.3 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:1.25rem;display:flex;gap:.6rem;align-items:center}
+.eyebrow::before{content:"";width:2rem;height:2px;background:var(--accent);flex:none}
 .muted{color:var(--muted)}
-mark{background:none;color:var(--accent-ink);box-shadow:inset 0 -.18em 0 color-mix(in srgb,var(--accent) 35%,transparent)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:52px;padding:.9rem 1.6rem;background:var(--accent);color:var(--on-accent);font:600 1rem/1.2 var(--body);border:2px solid var(--accent);border-radius:999px;text-decoration:none;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
+.hl{background:none;color:var(--accent-ink);box-shadow:inset 0 -.18em 0 color-mix(in srgb,var(--accent) 35%,transparent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:52px;padding:.9rem 1.6rem;background:var(--accent);color:var(--on-accent);font:600 .95rem/1.25 var(--body);letter-spacing:.02em;border:2px solid var(--accent);border-radius:2px;text-decoration:none;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
 .btn:hover{transform:translateY(-2px);box-shadow:0 8px 0 -2px color-mix(in srgb,var(--accent) 40%,transparent)}
 .btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .btn svg{width:20px;height:20px}
@@ -37,7 +42,7 @@ mark{background:none;color:var(--accent-ink);box-shadow:inset 0 -.18em 0 color-m
 .hero .sub{font-size:1.2rem;max-width:56ch;color:var(--muted)}
 .hero .sub strong{color:var(--ink)}
 .badges{display:grid;gap:.75rem;margin:2rem 0;max-width:34rem}
-.badge{display:flex;gap:.9rem;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);padding:.9rem 1.1rem;border-radius:10px;font-size:.98rem;line-height:1.5}
+.badge{display:flex;gap:.9rem;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);padding:.9rem 1.1rem;border-radius:2px;font-size:.98rem;line-height:1.5}
 .badge svg{width:22px;height:22px;flex:none;margin-top:2px;color:var(--accent-ink)}
 .badge b{display:block}
 /* band sections */
@@ -48,14 +53,15 @@ mark{background:none;color:var(--accent-ink);box-shadow:inset 0 -.18em 0 color-m
 .quote{border-left:4px solid var(--accent);padding-left:1.25rem;margin:2rem 0}
 .grid{display:grid;gap:1rem;margin-top:2rem}
 @media(min-width:760px){.grid.c3{grid-template-columns:repeat(3,1fr)}.grid.c2{grid-template-columns:repeat(2,1fr)}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.5rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:1.75rem}
 .card p{margin:0;color:var(--muted);font-size:1rem}
-.band .card{background:#1f1f1f;border-color:#333}
+.band .card{background:#1f1f1f;border-color:#3a3a3a}
 .band .card p{color:#b5b5b5}
-.num{counter-increment:n;font:400 1.1rem var(--head);color:var(--on-accent);background:var(--accent);width:2rem;height:2rem;border-radius:50%;display:grid;place-items:center;margin-bottom:1rem}
-.num::before{content:counter(n)}
+.num{counter-increment:n;font:400 1.6rem/1 var(--head);letter-spacing:.04em;color:var(--accent-ink);margin-bottom:1rem}
+.num::before{content:counter(n,decimal-leading-zero)}
+.band .num{color:var(--accent)}
 .cards{counter-reset:n}
-.threat{margin-top:2rem;padding:1.5rem;border:2px solid var(--accent);border-radius:14px;font-family:var(--head);font-size:1.45rem;line-height:1.3;font-weight:400;letter-spacing:.02em}
+.threat{margin-top:2rem;padding:1.5rem;border:1px solid var(--accent);border-left-width:5px;border-radius:2px;font-family:var(--head);font-size:1.45rem;line-height:1.3;font-weight:400;letter-spacing:.02em}
 /* contract */
 .contract{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.75rem;margin-top:2rem}
 .contract h3{display:flex;gap:.6rem;align-items:center}
@@ -77,10 +83,13 @@ details p{color:var(--muted);padding-bottom:1.25rem}
 .final label{text-align:left}
 .final h2{color:var(--band-ink);max-width:16ch}
 form{display:grid;gap:1rem;max-width:30rem;margin:2rem auto 0}
-label{display:grid;gap:.35rem;font-weight:500;font-size:.95rem}
-input{font:inherit;min-height:48px;padding:.7rem .9rem;border-radius:10px;border:1px solid #555;background:#1f1f1f;color:#f2f2f2}
-input::placeholder{color:#8a8a8a}
-.ok{display:none;padding:1rem 1.2rem;border:2px solid var(--accent);border-radius:12px;max-width:30rem;margin:1rem auto 0}
+label{font-weight:500;font-size:.95rem}
+.field{display:grid;gap:.4rem;text-align:left}
+.field .err{margin:0;max-width:none;color:#ff9a62;font-size:.95rem}
+input[aria-invalid="true"]{border:2px solid #ff9a62}
+input{font:inherit;min-height:48px;padding:.7rem .9rem;border-radius:2px;border:1px solid #8a8a8a;background:#1f1f1f;color:#f2f2f2}
+input::placeholder{color:#a3a3a3}
+.ok{display:none;padding:1rem 1.2rem;border:2px solid var(--accent);border-radius:2px;max-width:30rem;margin:1rem auto 0}
 .note{font-size:.88rem;color:#b5b5b5;margin-top:1rem}
 footer{padding:2rem 0;font-size:.9rem;color:var(--muted)}
 @media(max-width:600px){h1{font-size:2.3rem;line-height:1.08}h2{font-size:2.4rem;line-height:1.08}h3{font-size:1.7rem}.big{font-size:1.7rem}.threat{font-size:1.6rem}summary{font-size:1.4rem}.vlabel{font-size:1.1rem}}
@@ -89,48 +98,45 @@ footer{padding:2rem 0;font-size:.9rem;color:var(--muted)}
 .vsl .eyebrow{justify-content:center}
 .vsl h1,.vsl .sub{margin-left:auto;margin-right:auto}
 .vsl h1{max-width:24ch}
-.video{position:relative;width:100%;max-width:860px;aspect-ratio:16/9;margin:2.25rem auto 2rem;background:#161616;border:2px solid var(--accent);border-radius:18px;overflow:hidden;cursor:pointer;box-shadow:0 0 0 6px color-mix(in srgb,var(--accent) 14%,transparent),0 24px 60px -24px rgba(0,0,0,.5)}
-.video:focus-visible{outline:3px solid var(--accent);outline-offset:6px}
-.video-in{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:1rem;color:#f3f3f3;background:radial-gradient(circle at 50% 40%,#2a2a2a,#111)}
+.video{position:relative;width:100%;max-width:860px;aspect-ratio:16/9;margin:2.25rem auto 2rem;background:#161616;border:1px solid var(--accent);border-radius:4px;overflow:hidden;box-shadow:0 30px 70px -30px rgba(0,0,0,.55)}
+.video-in:focus-visible{outline:3px solid #fff;outline-offset:-8px}
+.video-in{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;font:inherit;cursor:pointer;display:grid;place-content:center;justify-items:center;gap:1rem;color:#f3f3f3;background:radial-gradient(circle at 50% 40%,#2a2a2a,#111)}
 .video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
 .play{width:84px;height:84px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;transition:transform .2s ease}
 .video:hover .play{transform:scale(1.08)}
 .play svg{width:38px;height:38px;margin-left:5px}
 .vlabel{font:400 1.3rem var(--head);letter-spacing:.04em;text-transform:uppercase}
-.vnote{font-size:.85rem;color:#b5b5b5;min-height:1.2em;padding:0 1rem}
-.micro{font-size:.88rem;color:var(--muted);margin:1.25rem auto 0;max-width:52ch}
+.vnote{font-size:.95rem;color:var(--muted);min-height:1.4em;margin:-1rem auto 1.25rem;max-width:none}
+.micro{font-size:.95rem;color:var(--muted);margin:1.25rem auto 0;max-width:52ch}
 </style>
 </head>
 <body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
 
-<header class="hero vsl">
+<main id="contenido" tabindex="-1">
+<section class="hero vsl" aria-labelledby="titulo">
   <div class="wrap">
     <div class="eyebrow">Taller presencial exclusivo · 3 horas</div>
-    <h1>Por qué seguir sumando cursos y libros es la verdadera razón por la que llevás +2 años <span class="script">estancada.</span></h1>
+    <h1 id="titulo">Por qué seguir sumando cursos y libros es la verdadera razón por la que llevás +2 años <span class="script">estancada.</span></h1>
     <p class="sub">Dejá de actuar como una “coleccionista de conocimiento”. Mirá este video hasta el final para entender qué te frena y cómo cerrar la brecha entre lo que querés y lo que hacés.</p>
-    <div class="video" id="video" role="button" tabindex="0" aria-label="Reproducir video de presentación">
-      <div class="video-in" id="vin">
-        <span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="vlabel">Mirá el video de presentación</span>
-        <span class="vnote" id="vnote" aria-live="polite"></span>
-      </div>
-    </div>
+    <div class="video" id="video"><button type="button" class="video-in" id="vin"><span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Reproducir video de presentación</span></button></div>
+    <p class="vnote" id="vnote" role="status"></p>
     <a class="btn" href="#reservar">Quiero reservar mi lugar en la lista preferencial por $10.000
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <p class="micro">Entrada preferencial $10.000 ARS (valor simbólico para reservar el lugar) · Fecha y lugar a confirmar: se avisa primero a la lista de inscriptas.</p>
   </div>
-</header>
+</section>
 
 <section class="band">
   <div class="wrap">
     <div class="eyebrow">Lo que vas a descubrir en 3 horas</div>
     <h2 style="max-width:26ch">Reconocer la brecha entre lo que querés y lo que estás <span class="script">postergando.</span></h2>
     <p class="muted">Una experiencia presencial diseñada no para darte una montaña de teoría, sino para que mires tu propia vida y reconozcas las creencias que te frenan.</p>
-    <div class="grid c2 cards">
-      <div class="card"><div class="num"></div><h3>Distinguir hechos de interpretaciones</h3><p>Vas a separar lo que realmente ocurre de los juicios e historias que te contás sobre por qué no podés.</p></div>
-      <div class="card"><div class="num"></div><h3>El circuito de tu parálisis</h3><p>Cómo tu lenguaje, tus emociones y tu cuerpo condicionan la forma en que decidís y ejecutás.</p></div>
-      <div class="card"><div class="num"></div><h3>Desarmar tus etiquetas fijas</h3><p>Dejar de repetirte “soy inconstante” o “soy mala para vender” para entender que tu identidad no es una sentencia previa.</p></div>
-      <div class="card"><div class="num"></div><h3>Claridad</h3><p>Una nueva perspectiva para tomar acción.</p></div>
+    <div class="grid c2 cards" role="list">
+      <div class="card" role="listitem"><div class="num" aria-hidden="true"></div><h3>Distinguir hechos de interpretaciones</h3><p>Vas a separar lo que realmente ocurre de los juicios e historias que te contás sobre por qué no podés.</p></div>
+      <div class="card" role="listitem"><div class="num" aria-hidden="true"></div><h3>El circuito de tu parálisis</h3><p>Cómo tu lenguaje, tus emociones y tu cuerpo condicionan la forma en que decidís y ejecutás.</p></div>
+      <div class="card" role="listitem"><div class="num" aria-hidden="true"></div><h3>Desarmar tus etiquetas fijas</h3><p>Dejar de repetirte “soy inconstante” o “soy mala para vender” para entender que tu identidad no es una sentencia previa.</p></div>
+      <div class="card" role="listitem"><div class="num" aria-hidden="true"></div><h3>Claridad</h3><p>Una nueva perspectiva para tomar acción.</p></div>
     </div>
   </div>
 </section>
@@ -168,39 +174,55 @@ footer{padding:2rem 0;font-size:.9rem;color:var(--muted)}
   <div class="wrap">
     <h2>Dejá de ser una espectadora de tu propio <span class="script">potencial.</span></h2>
     <p class="muted">Podés seguir acumulando información en tu cuaderno y prometiéndote que “más adelante” será el momento perfecto. O podés regalarte 3 horas para entender qué te frena y poner en marcha lo que llevás 2 años postergando.</p>
-    <form id="f" novalidate>
-      <label>Nombre<input name="n" type="text" autocomplete="name" required></label>
-      <label>Email<input name="e" type="email" autocomplete="email" required></label>
+    <form id="f" novalidate aria-label="Reserva de lugar en el taller">
+      <div class="field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" autocomplete="name" required aria-required="true" aria-describedby="err-nombre"><p class="err" id="err-nombre"></p></div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" inputmode="email" autocomplete="email" required aria-required="true" aria-describedby="err-email"><p class="err" id="err-email"></p></div>
       <button class="btn" type="submit">Reservar mi entrada al evento presencial · $10.000 ARS</button>
     </form>
     <div class="ok" id="ok" role="status" tabindex="-1">¡Listo! Quedaste anotada en la lista prioritaria. Te escribiremos apenas confirmemos fecha y salón.</div>
   </div>
 </section>
 
+</main>
 <footer><div class="wrap">© 2026 · Taller presencial de autoobservación y autoliderazgo</div></footer>
 
 <script>
-var VIDEO_SRC=""; // Pegá acá la URL de tu video: embed de YouTube/Vimeo o archivo .mp4
+var VIDEO_SRC=""; // URL del video: embed de YouTube/Vimeo o archivo .mp4
 (function(){
-  var box=document.getElementById('video'),vin=document.getElementById('vin'),note=document.getElementById('vnote'),done=false;
-  function play(){
-    if(done)return;
+  var box=document.getElementById('video'),btn=document.getElementById('vin'),note=document.getElementById('vnote');
+  btn.addEventListener('click',function(){
     if(!VIDEO_SRC){note.textContent='Acá se va a reproducir tu video de presentación.';return}
-    done=true;var el;
-    if(/\.(mp4|webm)(\?|$)/i.test(VIDEO_SRC)){el=document.createElement('video');el.src=VIDEO_SRC;el.controls=true;el.autoplay=true;el.playsInline=true}
-    else{el=document.createElement('iframe');el.src=VIDEO_SRC+(VIDEO_SRC.indexOf('?')>-1?'&':'?')+'autoplay=1';el.allow='autoplay; fullscreen; picture-in-picture';el.allowFullscreen=true;el.title='Video de presentación'}
-    box.replaceChildren(el);
-  }
-  box.addEventListener('click',play);
-  box.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();play()}});
+    var el;
+    if(/\.(mp4|webm)(\?|$)/i.test(VIDEO_SRC)){
+      el=document.createElement('video');el.src=VIDEO_SRC;el.controls=true;el.autoplay=true;el.playsInline=true;el.setAttribute('aria-label','Video de presentación');
+    }else{
+      el=document.createElement('iframe');el.src=VIDEO_SRC+(VIDEO_SRC.indexOf('?')>-1?'&':'?')+'autoplay=1';el.allow='autoplay; fullscreen; picture-in-picture';el.allowFullscreen=true;el.title='Video de presentación';
+    }
+    box.replaceChildren(el);el.focus();
+  });
 })();
-document.getElementById('f').addEventListener('submit',function(e){
-  e.preventDefault();
-  var f=e.target;
-  if(!f.n.value.trim()||!f.e.checkValidity()||!f.e.value){f.reportValidity();return}
-  f.style.display='none';
-  var ok=document.getElementById('ok');ok.style.display='block';ok.focus();
-});
+(function(){
+  var f=document.getElementById('f'),ok=document.getElementById('ok');
+  var fields=[
+    {el:document.getElementById('nombre'),err:document.getElementById('err-nombre'),msg:'Escribí tu nombre.'},
+    {el:document.getElementById('email'),err:document.getElementById('err-email'),msg:'Escribí un email válido, por ejemplo nombre@correo.com.'}
+  ];
+  function check(x){
+    var v=x.el.value.trim();
+    var good=v!==''&&(x.el.type!=='email'||x.el.checkValidity());
+    x.err.textContent=good?'':x.msg;
+    x.el.setAttribute('aria-invalid',good?'false':'true');
+    return good;
+  }
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var first=null;
+    fields.forEach(function(x){if(!check(x)&&!first)first=x.el});
+    if(first){first.focus();return}
+    f.style.display='none';ok.style.display='block';ok.focus();
+  });
+  fields.forEach(function(x){x.el.addEventListener('input',function(){if(x.el.getAttribute('aria-invalid')==='true')check(x)})});
+})();
 </script>
 </body>
 </html>
