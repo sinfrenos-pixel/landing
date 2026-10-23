@@ -109,6 +109,7 @@ footer{padding:2rem 0;font-size:.9rem;color:var(--muted)}
 .vlabel{font:400 1.3rem var(--head);letter-spacing:.04em;text-transform:uppercase}
 .vnote{font-size:.95rem;color:var(--muted);min-height:1.4em;margin:-1rem auto 1.25rem;max-width:none}
 .micro{font-size:.95rem;color:var(--muted);margin:1.25rem auto 0;max-width:52ch}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 /* guía */
 .guide{display:grid;gap:3rem;margin-top:2.5rem;align-items:start}
 @media(min-width:760px){.guide{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4rem}}
@@ -133,7 +134,7 @@ footer{padding:2rem 0;font-size:.9rem;color:var(--muted)}
     <p class="sub">No estoy en contra de que sigas aprendiendo. Pero cuando un curso más se convierte en tu refugio, entonces deja de ser aprendizaje y pasa a ser en una excusa para no actuar.</p>
     <div class="video" id="video"><button type="button" class="video-in" id="vin"><span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Reproducir video</span></button></div>
     <p class="vnote" id="vnote" role="status"></p>
-    <a class="btn" href="#reservar">Quiero reservar mi lugar por $10.000
+    <a class="btn" href="https://forms.gle/G2cKfX4thDV668Du6" target="_blank" rel="noopener noreferrer">Quiero reservar mi lugar por $10.000<span class="sr-only"> (se abre en una pestaña nueva)</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
@@ -208,8 +209,7 @@ footer{padding:2rem 0;font-size:.9rem;color:var(--muted)}
   <div class="wrap">
     <h2>Dejá de ser una espectadora de tu propio <span class="acc">potencial.</span></h2>
     <p class="muted">Podés seguir acumulando información en tu cuaderno y prometiéndote que “más adelante” será el momento perfecto. O podés regalarte 3 horas para entender qué te frena y poner en marcha lo que llevás 2 años postergando.</p>
-    <!-- Reemplazá href="#reservar" por el link de pago o de inscripción -->
-    <a class="btn" href="#reservar" style="margin-top:2rem">Reservar mi entrada al evento presencial · $10.000 ARS</a>
+    <a class="btn" href="https://forms.gle/G2cKfX4thDV668Du6" target="_blank" rel="noopener noreferrer" style="margin-top:2rem">Reservar mi entrada al evento presencial · $10.000 ARS<span class="sr-only"> (se abre en una pestaña nueva)</span></a>
   </div>
 </section>
 
