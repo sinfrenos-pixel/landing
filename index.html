@@ -109,6 +109,17 @@ footer{padding:2rem 0;font-size:.9rem;color:var(--muted)}
 .vlabel{font:400 1.3rem var(--head);letter-spacing:.04em;text-transform:uppercase}
 .vnote{font-size:.95rem;color:var(--muted);min-height:1.4em;margin:-1rem auto 1.25rem;max-width:none}
 .micro{font-size:.95rem;color:var(--muted);margin:1.25rem auto 0;max-width:52ch}
+/* guía */
+.guide{display:grid;gap:3rem;margin-top:2.5rem;align-items:start}
+@media(min-width:760px){.guide{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4rem}}
+.guide-photo{margin:0;position:relative;isolation:isolate}
+.guide-photo::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--accent);z-index:-1}
+.guide-photo img,.photo-ph{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
+.photo-ph{display:grid;place-items:center;background:#e2e2e2;border:1px solid var(--line);color:var(--muted);font:400 1.3rem var(--head);letter-spacing:.06em;text-transform:uppercase}
+.guide-name{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:.25rem}
+.guide-role{font:600 .85rem/1.4 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:1.75rem}
+.guide-story p{max-width:56ch;color:var(--muted)}
+.guide-story strong{display:block;color:var(--ink);font-weight:600;margin-bottom:.15rem}
 </style>
 </head>
 <body>
@@ -141,7 +152,30 @@ footer{padding:2rem 0;font-size:.9rem;color:var(--muted)}
   </div>
 </section>
 
-<section>
+<section aria-labelledby="guia-titulo">
+  <div class="wrap">
+    <div class="eyebrow">Quién te acompaña</div>
+    <h2 id="guia-titulo">Tu guía durante el <span class="acc">entrenamiento</span></h2>
+    <div class="guide">
+      <figure class="guide-photo">
+        <!-- FOTO: reemplazá el bloque .photo-ph por tu imagen, por ejemplo:
+             <img src="tu-foto.jpg" alt="Retrato de [tu nombre], guía del entrenamiento" width="800" height="1000">
+             Formato recomendado: vertical 4:5. -->
+        <div class="photo-ph" role="img" aria-label="Espacio reservado para la foto de la guía del entrenamiento">Tu foto</div>
+      </figure>
+      <div class="guide-story">
+        <h3 class="guide-name">[Tu nombre]</h3>
+        <p class="guide-role">[A qué te dedicás, en una línea]</p>
+        <p><strong>De dónde vengo</strong>[Contá brevemente tu origen y tu contexto.]</p>
+        <p><strong>A qué me dedico</strong>[Qué hacés hoy y con quién trabajás.]</p>
+        <p><strong>Cómo llegué hasta acá</strong>[Los momentos clave que te trajeron a guiar este entrenamiento.]</p>
+        <p><strong>Los desafíos que atravesé</strong>[Qué te costó, qué superaste y qué aprendiste, para conectar con quien te lee.]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
   <div class="wrap">
     <div class="eyebrow">Detalles de reserva</div>
     <h2>Todo sobre tu lugar.</h2>
